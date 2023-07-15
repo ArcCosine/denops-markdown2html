@@ -21,6 +21,6 @@ export async function main(denops: Denops): Promise<void> {
         },
     };
     await denops.cmd(
-        `command! -nargs=? Markdown2Html call denops#notify('${denops.name}', 'read',[])`
+        `command! -nargs=? DenopsMarkdown2Html call denops#notify('${denops.name}', 'read',[])`
     );
 }
