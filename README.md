@@ -20,7 +20,11 @@ It uses denops.vim.
     call dein#add('vim-denops/denops.vim')
     call dein#add('ArcCosine/denops-markdown2html')
 
-## Commands
+### Clipboad
+
+    set clipboard+=unnamed
+
+### Commands
 
     :DenopsMarkdown2Html
 
