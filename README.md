@@ -7,8 +7,8 @@ It uses denops.vim.
 
 ### requirements
 
-    - [denops.vim](https://github.com/vim-denops/denops.vim)
-    - [Deno](https://deno.land/)
+-   [denops.vim](https://github.com/vim-denops/denops.vim)
+-   [Deno](https://deno.land/)
 
 ### Install with vim-plug
 
