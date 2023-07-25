@@ -1,4 +1,5 @@
 import type { Denops } from "https://deno.land/x/denops_std/mod.ts";
+import { batch } from "https://deno.land/x/denops_std/batch/batch.ts";
 import { marked } from "https://deno.land/x/marked/mod.ts";
 
 export async function main(denops: Denops): Promise<void> {
@@ -14,10 +15,12 @@ export async function main(denops: Denops): Promise<void> {
                 headerIds: false,
                 mangle: false,
             });
-            await denops.cmd("enew");
-            await denops.call("setline", 1, html.split(/\n/));
-            await denops.cmd("% yank");
-            await denops.cmd("bdelete!");
+            await batch(denops, async (denops: Denops) => {
+                await denops.cmd("enew");
+                await denops.call("setline", 1, html.split(/\n/));
+                await denops.cmd("% yank");
+                await denops.cmd("bdelete!");
+            });
         },
     };
     await denops.cmd(
