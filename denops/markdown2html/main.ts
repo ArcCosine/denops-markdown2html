@@ -15,7 +15,6 @@ export async function main(denops: Denops): Promise<void> {
                 mangle: false,
             });
             await denops.call("setreg", "+", html);
-            await denops.call("echo", "copy done");
         },
     };
     await denops.cmd(
